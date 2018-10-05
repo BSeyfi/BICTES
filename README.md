@@ -5,16 +5,16 @@
 - - - -
 
 Memory and also computing power in embedded systems are in tight conditions so it is a need to make images as small as we can but simple to decompress. BICTES do this job.
-BICTES creates an array of `char` (replaceable with `uint8_t`) for use in `C` or C-like languages.
+BICTES creates an array of `uint8_t` (replaceable with `char`) for use in `C` or C-like languages.
 
 **BITSEC** is designed to make data array from image to use in embedded systems on black and white LCD displays.
 <br/>
 
-![bictes-sample](https://user-images.githubusercontent.com/42473071/44806056-18f99f00-abdb-11e8-8715-7d70a1c6d466.jpg)
-
+![bictes-sample](https://user-images.githubusercontent.com/42473071/46546087-fd1da300-c8d4-11e8-83bf-7c8335c1b963.png)
 
 - [Installation](#installation)
 - [Features](#features)
+- [Changelog](#changelog)
 - [License](#license)
 - [Acknowledgment](#acknowledgment)
 
@@ -23,10 +23,23 @@ Download `BICTES.exe` from `Release` page:https://github.com/BSeyfi/BICTES/relea
 **Requirements:** `.Net Framework 4.0` or later installed on windows system.
 
 ## Features
-- Compress image into 1-bit bitmap images based on **[bicolor image compression protocol for embedded systems](http://github.com/BSeyfi/bicolor-image-compression-protocol-for-embedded-systems)**
-- Convert colorful or grayscale image to 1-bit bitmap image without compression(you can save it and use it  separately)
-- Produce compressed or uncompressed image array in `C` or C-like languages array format - each byte is equivalent to 8 vertical pixels
-- Show compression ratio - to show is compression useful for that specific image or not
+- Convert RGB or grayscale image to 1-bit monochrome image (support jpg, png and bmp files) and display converted image
+- Save the converted image in the monochrome format
+- Convert monochrome image to C Array and copy
+- Convert monochrome image to compressed array due to [bicolor image compression protocol for embedded systems](https://github.com/BSeyfi/bicolor-image-compression-protocol-for-embedded-systems) and copy
+- Copy compressed image array with padding
+- Recreate image from the compressed array to verify the compressed array
+- Extract count of fully black and fully white chunks
+- Extract padding data
+- Extract the width, height, and offset of the first chunk
+- Calculate the size of the uncompressed array
+- Calculate the size of the compressed array
+- Calculate compression ratio
+- Add blank row(s) to make image height divisible by eight
+
+## Changelog
+All notable changes to this project will be documented in [CHANGELOG.md](https://github.com/BSeyfi/BICTES/blob/master/CHANGELOG.md) file.
+
 
 ## License
 This software is provided as Freeware for private non-commercial or educational use, including non-profit organization.
